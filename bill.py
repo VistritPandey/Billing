@@ -258,9 +258,9 @@ class Bill_App:
             row=0, column=0, padx=5, pady=5)
         GBill_btn = Button(btn_f, text="Generate Bill", command=self.bill_area, bg="cadetblue", fg="white", bd=2, pady=15, width=10, font="arial 15 bold").grid(
             row=0, column=1, padx=5, pady=5)
-        clear_btn = Button(btn_f, text="Clear", bg="cadetblue", fg="white", bd=2, pady=15, width=10, font="arial 15 bold").grid(
+        clear_btn = Button(btn_f, text="Clear", command=self.clear_data, bg="cadetblue", fg="white", bd=2, pady=15, width=10, font="arial 15 bold").grid(
             row=0, column=2, padx=5, pady=5)
-        exit_btn = Button(btn_f, text="Exit", bg="cadetblue", fg="white", bd=2, pady=15, width=10, font="arial 15 bold").grid(
+        exit_btn = Button(btn_f, text="Exit", command=self.exit, bg="cadetblue", fg="white", bd=2, pady=15, width=10, font="arial 15 bold").grid(
             row=0, column=3, padx=5, pady=5)
 
     def total(self):
@@ -413,6 +413,50 @@ class Bill_App:
                 present = "yes"
         if present == "no":
             tkMessageBox.showerror("Error", "Invalid Bill Number")
+
+    def clear_data(self):
+        op = tkMessageBox.askyesno("Clear", "Do you really want to clear?")
+        if(op > 0):
+            self.x1.set(0)
+            self.x2.set(0)
+            self.x3.set(0)
+            self.x4.set(0)
+            self.x5.set(0)
+            self.x6.set(0)
+
+            self.y1.set(0)
+            self.y2.set(0)
+            self.y3.set(0)
+            self.y4.set(0)
+            self.y5.set(0)
+            self.y6.set(0)
+
+            self.z1.set(0)
+            self.z2.set(0)
+            self.z3.set(0)
+            self.z4.set(0)
+            self.z5.set(0)
+            self.z6.set(0)
+
+            self.r1_total.set("")
+            self.r2_total.set("")
+            self.r3_total.set("")
+
+            self.r1_tax.set("")
+            self.r2_tax.set("")
+            self.r3_tax.set("")
+
+            self.c_name.set("")
+            self.c_phon.set("")
+            x = random.randint(1000, 9999)
+            self.bill_no.set(str(x))
+            self.search_bill.set("")
+            self.welcome_bill()
+
+    def exit(self):
+        op = tkMessageBox.askyesno("Exit", "Do you really want to exit?")
+        if(op > 0):
+            self.root.destroy()
 
 
 root = Tk()
