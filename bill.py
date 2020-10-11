@@ -9,6 +9,41 @@ class Bill_App:
         bg_color = "#074463"
         title = Label(self.root, text="Billing Software", bd=12, relief=GROOVE,
                       bg=bg_color, fg="white", font=("times new roman", 30, "bold"), pady=2).pack(fill=X)
+
+        # Variables
+        self.x1 = IntVar()
+        self.x2 = IntVar()
+        self.x3 = IntVar()
+        self.x4 = IntVar()
+        self.x5 = IntVar()
+        self.x6 = IntVar()
+
+        self.y1 = IntVar()
+        self.y2 = IntVar()
+        self.y3 = IntVar()
+        self.y4 = IntVar()
+        self.y5 = IntVar()
+        self.y6 = IntVar()
+
+        self.z1 = IntVar()
+        self.z2 = IntVar()
+        self.z3 = IntVar()
+        self.z4 = IntVar()
+        self.z5 = IntVar()
+        self.z6 = IntVar()
+
+        self.r1_total = StringVar()
+        self.r2_total = StringVar()
+        self.r3_total = StringVar()
+
+        self.r1_tax = StringVar()
+        self.r2_tax = StringVar()
+        self.r3_tax = StringVar()
+
+        self.c_name = StringVar()
+        self.c_phon = StringVar()
+        self.bill_no = StringVar()
+
         # Customer Detail
         F = LabelFrame(self.root, text="Customer Details", font=(
             "times new roman", 15, "bold"), fg="gold", bg=bg_color)
