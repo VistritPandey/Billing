@@ -154,6 +154,40 @@ class Bill_App:
         F6 = LabelFrame(self.root, bd=10, relief=GROOVE, text="Bill Menu", font=(
             "times new roman", 15, "bold"), fg="gold", bg=bg_color)
         F6.place(x=0, y=560, relwidth=1, height=140)
+        m1_lbl = Label(F6, text="Total R1 price", bg=bg_color, fg="white", font=("times new roman", 14, "bold")).grid(
+            row=0, column=0, padx=20, pady=1, sticky="w")
+        m1_txt = Entry(F6, width=18, font="arial 10 bold", bd=7,
+                       relief=SUNKEN).grid(row=0, column=1, padx=10, pady=1)
+
+        m2_lbl = Label(F6, text="Total R2 price", bg=bg_color, fg="white", font=("times new roman", 14, "bold")).grid(
+            row=1, column=0, padx=20, pady=1, sticky="w")
+        m2_txt = Entry(F6, width=18, font="arial 10 bold", bd=7,
+                       relief=SUNKEN).grid(row=1, column=1, padx=10, pady=1)
+
+        m3_lbl = Label(F6, text="Total R3 price", bg=bg_color, fg="white", font=("times new roman", 14, "bold")).grid(
+            row=2, column=0, padx=20, pady=1, sticky="w")
+        m3_txt = Entry(F6, width=18, font="arial 10 bold", bd=7,
+                       relief=SUNKEN).grid(row=2, column=1, padx=10, pady=1)
+
+        c1_lbl = Label(F6, text="R1 Tax", bg=bg_color, fg="white", font=("times new roman", 14, "bold")).grid(
+            row=0, column=2, padx=20, pady=1, sticky="w")
+        c1_txt = Entry(F6, width=18, font="arial 10 bold", bd=7,
+                       relief=SUNKEN).grid(row=0, column=3, padx=10, pady=1)
+
+        c2_lbl = Label(F6, text="R2 Tax", bg=bg_color, fg="white", font=("times new roman", 14, "bold")).grid(
+            row=1, column=2, padx=20, pady=1, sticky="w")
+        c2_txt = Entry(F6, width=18, font="arial 10 bold", bd=7,
+                       relief=SUNKEN).grid(row=1, column=3, padx=10, pady=1)
+
+        c3_lbl = Label(F6, text="R3 Tax", bg=bg_color, fg="white", font=("times new roman", 14, "bold")).grid(
+            row=2, column=2, padx=20, pady=1, sticky="w")
+        c3_txt = Entry(F6, width=18, font="arial 10 bold", bd=7,
+                       relief=SUNKEN).grid(row=2, column=3, padx=10, pady=1)
+
+        # Button F
+
+        btn_f = Frame(F6, bd=7, relief=GROOVE)
+        btn_f.place(x=750, width=580, height=150)
 
 
 root = Tk()
