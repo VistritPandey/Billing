@@ -189,6 +189,15 @@ class Bill_App:
         btn_f = Frame(F6, bd=7, relief=GROOVE)
         btn_f.place(x=750, width=580, height=150)
 
+        total_btn = Button(btn_f, text="Total", bg="cadetblue", fg="white", bd=2, pady=15, width=10, font="arial 15 bold").grid(
+            row=0, column=0, padx=5, pady=5)
+        GBill_btn = Button(btn_f, text="Generate Bill", bg="cadetblue", fg="white", bd=2, pady=15, width=10, font="arial 15 bold").grid(
+            row=0, column=1, padx=5, pady=5)
+        clear_btn = Button(btn_f, text="Clear", bg="cadetblue", fg="white", bd=2, pady=15, width=10, font="arial 15 bold").grid(
+            row=0, column=2, padx=5, pady=5)
+        exit_btn = Button(btn_f, text="Exit", bg="cadetblue", fg="white", bd=2, pady=15, width=10, font="arial 15 bold").grid(
+            row=0, column=3, padx=5, pady=5)
+
 
 root = Tk()
 obj = Bill_App(root)
