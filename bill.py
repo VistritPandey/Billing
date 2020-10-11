@@ -1,6 +1,7 @@
 from Tkinter import *
 
 # Prices
+tax = 0.18
 x1_price = 10
 x2_price = 10
 x3_price = 10
@@ -266,6 +267,7 @@ class Bill_App:
             (self.x6.get()*x6_price)
         )
         self.r1_total.set(str(self.total_r1_price))
+        self.r1_tax.set(str(self.total_r1_price*tax))
 
         self.total_r2_price = float(
             (self.y1.get()*y1_price) +
@@ -276,6 +278,7 @@ class Bill_App:
             (self.y6.get()*y6_price)
         )
         self.r2_total.set(str(self.total_r2_price))
+        self.r2_tax.set(str(self.total_r2_price*tax))
 
         self.total_r3_price = float(
             (self.z1.get()*z1_price) +
@@ -286,6 +289,7 @@ class Bill_App:
             (self.z6.get()*z6_price)
         )
         self.r3_total.set(str(self.total_r3_price))
+        self.r3_tax.set(str(self.total_r3_price*tax))
 
 
 root = Tk()
