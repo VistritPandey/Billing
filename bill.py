@@ -37,34 +37,105 @@ class Bill_App:
             "times new roman", 15, "bold"), fg="gold", bg=bg_color)
         F2.place(x=5, y=180, width=325, height=380)
 
-        item1_lbl = Label(F2, text="X1", font=("times new roman", 16, "bold"), bg=bg_color,
-                          fg="lightgreen").grid(row=0, column=0, padx=10, pady=10, sticky="w")
-        item1_txt = Entry(F2, width=10, font=("times new roman", 16, "bold"),
-                          bd=5, relief=SUNKEN).grid(row=0, column=1, padx=10, pady=10)
+        x1_lbl = Label(F2, text="X1", font=("times new roman", 16, "bold"), bg=bg_color,
+                       fg="lightgreen").grid(row=0, column=0, padx=10, pady=10, sticky="w")
+        x1_txt = Entry(F2, width=10, font=("times new roman", 16, "bold"),
+                       bd=5, relief=SUNKEN).grid(row=0, column=1, padx=10, pady=10)
 
-        item2_lbl = Label(F2, text="X2", font=("times new roman", 16, "bold"), bg=bg_color,
-                          fg="lightgreen").grid(row=1, column=0, padx=10, pady=10, sticky="w")
-        item2_txt = Entry(F2, width=10, font=("times new roman", 16, "bold"),
-                          bd=5, relief=SUNKEN).grid(row=1, column=1, padx=10, pady=10)
+        x2_lbl = Label(F2, text="X2", font=("times new roman", 16, "bold"), bg=bg_color,
+                       fg="lightgreen").grid(row=1, column=0, padx=10, pady=10, sticky="w")
+        x2_txt = Entry(F2, width=10, font=("times new roman", 16, "bold"),
+                       bd=5, relief=SUNKEN).grid(row=1, column=1, padx=10, pady=10)
 
-        item3_lbl = Label(F2, text="X3", font=("times new roman", 16, "bold"), bg=bg_color,
-                          fg="lightgreen").grid(row=2, column=0, padx=10, pady=10, sticky="w")
-        item3_txt = Entry(F2, width=10, font=("times new roman", 16, "bold"),
-                          bd=5, relief=SUNKEN).grid(row=2, column=1, padx=10, pady=10)
+        x3_lbl = Label(F2, text="X3", font=("times new roman", 16, "bold"), bg=bg_color,
+                       fg="lightgreen").grid(row=2, column=0, padx=10, pady=10, sticky="w")
+        x3_txt = Entry(F2, width=10, font=("times new roman", 16, "bold"),
+                       bd=5, relief=SUNKEN).grid(row=2, column=1, padx=10, pady=10)
 
-        item4_lbl = Label(F2, text="X4", font=("times new roman", 16, "bold"), bg=bg_color,
-                          fg="lightgreen").grid(row=3, column=0, padx=10, pady=10, sticky="w")
-        item4_txt = Entry(F2, width=10, font=("times new roman", 16, "bold"),
-                          bd=5, relief=SUNKEN).grid(row=3, column=1, padx=10, pady=10)
+        x4_lbl = Label(F2, text="X4", font=("times new roman", 16, "bold"), bg=bg_color,
+                       fg="lightgreen").grid(row=3, column=0, padx=10, pady=10, sticky="w")
+        x4_txt = Entry(F2, width=10, font=("times new roman", 16, "bold"),
+                       bd=5, relief=SUNKEN).grid(row=3, column=1, padx=10, pady=10)
 
-        item5_lbl = Label(F2, text="X5", font=("times new roman", 16, "bold"), bg=bg_color,
-                          fg="lightgreen").grid(row=4, column=0, padx=10, pady=10, sticky="w")
-        item5_txt = Entry(F2, width=10, font=("times new roman", 16, "bold"),
-                          bd=5, relief=SUNKEN).grid(row=4, column=1, padx=10, pady=10)
-        item6_lbl = Label(F2, text="X6", font=("times new roman", 16, "bold"), bg=bg_color,
-                          fg="lightgreen").grid(row=5, column=0, padx=10, pady=10, sticky="w")
-        item6_txt = Entry(F2, width=10, font=("times new roman", 16, "bold"),
-                          bd=5, relief=SUNKEN).grid(row=5, column=1, padx=10, pady=10)
+        x5_lbl = Label(F2, text="X5", font=("times new roman", 16, "bold"), bg=bg_color,
+                       fg="lightgreen").grid(row=4, column=0, padx=10, pady=10, sticky="w")
+        x5_txt = Entry(F2, width=10, font=("times new roman", 16, "bold"),
+                       bd=5, relief=SUNKEN).grid(row=4, column=1, padx=10, pady=10)
+
+        x6_lbl = Label(F2, text="X6", font=("times new roman", 16, "bold"), bg=bg_color,
+                       fg="lightgreen").grid(row=5, column=0, padx=10, pady=10, sticky="w")
+        x6_txt = Entry(F2, width=10, font=("times new roman", 16, "bold"),
+                       bd=5, relief=SUNKEN).grid(row=5, column=1, padx=10, pady=10)
+
+        # Frame2
+        F3 = LabelFrame(self.root, bd=10, text="R2", font=(
+            "times new roman", 15, "bold"), fg="gold", bg=bg_color)
+        F3.place(x=340, y=180, width=325, height=380)
+
+        y1_lbl = Label(F3, text="Y1", font=("times new roman", 16, "bold"), bg=bg_color,
+                       fg="lightgreen").grid(row=0, column=0, padx=10, pady=10, sticky="w")
+        y1_txt = Entry(F3, width=10, font=("times new roman", 16, "bold"),
+                       bd=5, relief=SUNKEN).grid(row=0, column=1, padx=10, pady=10)
+
+        y2_lbl = Label(F3, text="Y2", font=("times new roman", 16, "bold"), bg=bg_color,
+                       fg="lightgreen").grid(row=1, column=0, padx=10, pady=10, sticky="w")
+        y2_txt = Entry(F3, width=10, font=("times new roman", 16, "bold"),
+                       bd=5, relief=SUNKEN).grid(row=1, column=1, padx=10, pady=10)
+
+        y3_lbl = Label(F3, text="Y3", font=("times new roman", 16, "bold"), bg=bg_color,
+                       fg="lightgreen").grid(row=2, column=0, padx=10, pady=10, sticky="w")
+        y3_txt = Entry(F3, width=10, font=("times new roman", 16, "bold"),
+                       bd=5, relief=SUNKEN).grid(row=2, column=1, padx=10, pady=10)
+
+        y4_lbl = Label(F3, text="Y4", font=("times new roman", 16, "bold"), bg=bg_color,
+                       fg="lightgreen").grid(row=3, column=0, padx=10, pady=10, sticky="w")
+        y4_txt = Entry(F3, width=10, font=("times new roman", 16, "bold"),
+                       bd=5, relief=SUNKEN).grid(row=3, column=1, padx=10, pady=10)
+
+        y5_lbl = Label(F3, text="Y5", font=("times new roman", 16, "bold"), bg=bg_color,
+                       fg="lightgreen").grid(row=4, column=0, padx=10, pady=10, sticky="w")
+        y5_txt = Entry(F3, width=10, font=("times new roman", 16, "bold"),
+                       bd=5, relief=SUNKEN).grid(row=4, column=1, padx=10, pady=10)
+
+        y6_lbl = Label(F3, text="Y6", font=("times new roman", 16, "bold"), bg=bg_color,
+                       fg="lightgreen").grid(row=5, column=0, padx=10, pady=10, sticky="w")
+        y6_txt = Entry(F3, width=10, font=("times new roman", 16, "bold"),
+                       bd=5, relief=SUNKEN).grid(row=5, column=1, padx=10, pady=10)
+
+        # Frame3
+        F4 = LabelFrame(self.root, bd=10, text="R1", font=(
+            "times new roman", 15, "bold"), fg="gold", bg=bg_color)
+        F4.place(x=670, y=180, width=325, height=380)
+
+        z1_lbl = Label(F4, text="Z1", font=("times new roman", 16, "bold"), bg=bg_color,
+                       fg="lightgreen").grid(row=0, column=0, padx=10, pady=10, sticky="w")
+        z1_txt = Entry(F4, width=10, font=("times new roman", 16, "bold"),
+                       bd=5, relief=SUNKEN).grid(row=0, column=1, padx=10, pady=10)
+
+        z2_lbl = Label(F4, text="Z2", font=("times new roman", 16, "bold"), bg=bg_color,
+                       fg="lightgreen").grid(row=1, column=0, padx=10, pady=10, sticky="w")
+        z2_txt = Entry(F4, width=10, font=("times new roman", 16, "bold"),
+                       bd=5, relief=SUNKEN).grid(row=1, column=1, padx=10, pady=10)
+
+        z3_lbl = Label(F4, text="Z3", font=("times new roman", 16, "bold"), bg=bg_color,
+                       fg="lightgreen").grid(row=2, column=0, padx=10, pady=10, sticky="w")
+        z3_txt = Entry(F4, width=10, font=("times new roman", 16, "bold"),
+                       bd=5, relief=SUNKEN).grid(row=2, column=1, padx=10, pady=10)
+
+        z4_lbl = Label(F4, text="Z4", font=("times new roman", 16, "bold"), bg=bg_color,
+                       fg="lightgreen").grid(row=3, column=0, padx=10, pady=10, sticky="w")
+        z4_txt = Entry(F4, width=10, font=("times new roman", 16, "bold"),
+                       bd=5, relief=SUNKEN).grid(row=3, column=1, padx=10, pady=10)
+
+        z5_lbl = Label(F4, text="Z5", font=("times new roman", 16, "bold"), bg=bg_color,
+                       fg="lightgreen").grid(row=4, column=0, padx=10, pady=10, sticky="w")
+        z5_txt = Entry(F4, width=10, font=("times new roman", 16, "bold"),
+                       bd=5, relief=SUNKEN).grid(row=4, column=1, padx=10, pady=10)
+
+        z6_lbl = Label(F4, text="Z6", font=("times new roman", 16, "bold"), bg=bg_color,
+                       fg="lightgreen").grid(row=5, column=0, padx=10, pady=10, sticky="w")
+        z6_txt = Entry(F4, width=10, font=("times new roman", 16, "bold"),
+                       bd=5, relief=SUNKEN).grid(row=5, column=1, padx=10, pady=10)
 
 
 root = Tk()
