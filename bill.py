@@ -94,7 +94,7 @@ class Bill_App:
         c_bill_txt = Entry(F, width=15, textvariable=self.search_bill, font="arial 15", bd=7, relief=SUNKEN).grid(
             row=0, column=5, pady=5, padx=10)
 
-        bill_btn = Button(F, text="Search", width=10, bd=7,
+        bill_btn = Button(F, text="Search", command=self.find_bill, width=10, bd=7,
                           font="arial 12 bold").grid(row=0, column=6, pady=10, padx=10)
 
         # Frame1
@@ -361,17 +361,17 @@ class Bill_App:
                                 (self.z6.get(), (self.z6.get()*z6_price)))
         self.txtarea.insert(END, "\n-------------------------------------")
         if self.r1_tax.get() != "Rs.0.0":
-            self.txtarea.insert(END, "\n R1 Tax: \t\t\t\tRs. %s" %
+            self.txtarea.insert(END, "\n R1 Tax: \t\t\t\t %s" %
                                 (self.r1_tax.get()))
             self.txtarea.insert(END, "\n-------------------------------------")
 
         if self.r2_tax.get() != "Rs.0.0":
-            self.txtarea.insert(END, "\n R2 Tax: \t\t\t\tRs. %s" %
+            self.txtarea.insert(END, "\n R2 Tax: \t\t\t\t %s" %
                                 (self.r2_tax.get()))
             self.txtarea.insert(END, "\n-------------------------------------")
 
         if self.r3_tax.get() != "Rs.0.0":
-            self.txtarea.insert(END, "\n R3 Tax: \t\t\t\tRs. %s" %
+            self.txtarea.insert(END, "\n R3 Tax: \t\t\t\t %s" %
                                 (self.r3_tax.get()))
             self.txtarea.insert(END, "\n-------------------------------------")
         self.txtarea.insert(END, "\n Total Bill: \t\t\t\tRs. %s" %
@@ -397,8 +397,22 @@ class Bill_App:
             f1 = open("bills/"+str(self.bill_no.get())+".txt", "w")
             f1.write(self.bill_data)
             f1.close()
+            tkMessageBox.showinfo("Saved", "Saved Successfully")
         else:
             return
+
+    def find_bill(self):
+        present = "no"
+        for i in os.listdir("bills/"):
+            if i.split('.')[0] == self.search_bill.get():
+                f1 = open("bills/%s" % (i), "r")
+                self.txtarea.delete('1.0', END)
+                for d in f1:
+                    self.txtarea.insert(END, d)
+                f1.close()
+                present = "yes"
+        if present == "no":
+            tkMessageBox.showerror("Error", "Invalid Bill Number")
 
 
 root = Tk()
