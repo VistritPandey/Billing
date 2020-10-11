@@ -266,8 +266,8 @@ class Bill_App:
             (self.x5.get()*x5_price) +
             (self.x6.get()*x6_price)
         )
-        self.r1_total.set(str(self.total_r1_price))
-        self.r1_tax.set(str(self.total_r1_price*tax))
+        self.r1_total.set("Rs."+str(self.total_r1_price))
+        self.r1_tax.set("Rs."+str(round((self.total_r1_price*tax), 2)))
 
         self.total_r2_price = float(
             (self.y1.get()*y1_price) +
@@ -277,8 +277,8 @@ class Bill_App:
             (self.y5.get()*y5_price) +
             (self.y6.get()*y6_price)
         )
-        self.r2_total.set(str(self.total_r2_price))
-        self.r2_tax.set(str(self.total_r2_price*tax))
+        self.r2_total.set("Rs."+str(self.total_r2_price))
+        self.r2_tax.set("Rs."+str(round((self.total_r2_price*tax), 2)))
 
         self.total_r3_price = float(
             (self.z1.get()*z1_price) +
@@ -288,8 +288,8 @@ class Bill_App:
             (self.z5.get()*z5_price) +
             (self.z6.get()*z6_price)
         )
-        self.r3_total.set(str(self.total_r3_price))
-        self.r3_tax.set(str(self.total_r3_price*tax))
+        self.r3_total.set("Rs."+str(self.total_r3_price))
+        self.r3_tax.set("Rs."+str(round((self.total_r3_price*tax), 2)))
 
 
 root = Tk()
