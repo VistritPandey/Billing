@@ -1,4 +1,6 @@
 from Tkinter import *
+import math
+import random
 
 # Prices
 tax = 0.18
@@ -65,7 +67,9 @@ class Bill_App:
 
         self.c_name = StringVar()
         self.c_phon = StringVar()
+        x = random.randint(1000, 9999)
         self.bill_no = StringVar()
+        self.bill_no.set(str(x))
         self.search_bill = StringVar()
 
         # Customer Detail
@@ -242,7 +246,7 @@ class Bill_App:
             row=2, column=2, padx=20, pady=1, sticky="w")
         c3_txt = Entry(F6, width=18, textvariable=self.r3_tax, font="arial 10 bold", bd=7,
                        relief=SUNKEN).grid(row=2, column=3, padx=10, pady=1)
-
+        self.welcome_bill()
         # Button F
 
         btn_f = Frame(F6, bd=7, relief=GROOVE)
@@ -250,7 +254,7 @@ class Bill_App:
 
         total_btn = Button(btn_f, command=self.total, text="Total", bg="cadetblue", fg="white", bd=2, pady=15, width=10, font="arial 15 bold").grid(
             row=0, column=0, padx=5, pady=5)
-        GBill_btn = Button(btn_f, text="Generate Bill", bg="cadetblue", fg="white", bd=2, pady=15, width=10, font="arial 15 bold").grid(
+        GBill_btn = Button(btn_f, text="Generate Bill", command=self.welcome_bill, bg="cadetblue", fg="white", bd=2, pady=15, width=10, font="arial 15 bold").grid(
             row=0, column=1, padx=5, pady=5)
         clear_btn = Button(btn_f, text="Clear", bg="cadetblue", fg="white", bd=2, pady=15, width=10, font="arial 15 bold").grid(
             row=0, column=2, padx=5, pady=5)
@@ -290,6 +294,15 @@ class Bill_App:
         )
         self.r3_total.set("Rs."+str(self.total_r3_price))
         self.r3_tax.set("Rs."+str(round((self.total_r3_price*tax), 2)))
+
+    def bill_area(self):
+        pass
+
+    def welcome_bill(self):
+        self.txtarea.insert(END, "\tWelcome COMPANY NAME")
+        self.txtarea.insert(END, "\nBill no. :      " + self.bill_no.get())
+        self.txtarea.insert(END, "\nCustomer name : " + self.c_name.get())
+        self.txtarea.insert(END, "\nPhone number :  "+self.c_phon.get())
 
 
 root = Tk()
