@@ -1,6 +1,8 @@
 from Tkinter import *
 import math
+import os
 import random
+from Tkinter import messagebox
 
 # Prices
 tax = 0.18
@@ -294,9 +296,10 @@ class Bill_App:
         )
         self.r3_total.set("Rs."+str(self.total_r3_price))
         self.r3_tax.set("Rs."+str(round((self.total_r3_price*tax), 2)))
-
-        self.Total_Bill = self.total_r1_price + \
-            self.total_r2_price + self.total_r3_price
+        self.Total_Tax = ((self.total_r1_price*tax) +
+                          (self.total_r2_price*tax)+(self.total_r3_price*tax))
+        self.Total_Bill = float(
+            self.total_r1_price+self.total_r2_price+self.total_r3_price+self.Total_Tax)
 
     def bill_area(self):
         self.welcome_bill()
@@ -358,19 +361,22 @@ class Bill_App:
                                 (self.z6.get(), (self.z6.get()*z6_price)))
         self.txtarea.insert(END, "\n-------------------------------------")
         if self.r1_tax.get() != "Rs.0.0":
-            self.txtarea.insert(END, "\n R1 Tax: \t\t\t\t%s" %
+            self.txtarea.insert(END, "\n R1 Tax: \t\t\t\tRs. %s" %
                                 (self.r1_tax.get()))
             self.txtarea.insert(END, "\n-------------------------------------")
 
         if self.r2_tax.get() != "Rs.0.0":
-            self.txtarea.insert(END, "\n R2 Tax: \t\t\t\t%s" %
+            self.txtarea.insert(END, "\n R2 Tax: \t\t\t\tRs. %s" %
                                 (self.r2_tax.get()))
             self.txtarea.insert(END, "\n-------------------------------------")
 
         if self.r3_tax.get() != "Rs.0.0":
-            self.txtarea.insert(END, "\n R3 Tax: \t\t\t\t%s" %
+            self.txtarea.insert(END, "\n R3 Tax: \t\t\t\tRs. %s" %
                                 (self.r3_tax.get()))
             self.txtarea.insert(END, "\n-------------------------------------")
+        self.txtarea.insert(END, "\n Total Bill: \t\t\t\tRs. %s" %
+                            (self.Total_Bill))
+        self.txtarea.insert(END, "\n-------------------------------------")
 
     def welcome_bill(self):
         self.txtarea.delete('1.0', END)
@@ -381,6 +387,8 @@ class Bill_App:
         self.txtarea.insert(END, "\n-------------------------------------")
         self.txtarea.insert(END, "\n Products\t\tQTY\t\tPrice")
         self.txtarea.insert(END, "\n-------------------------------------")
+
+    def save_bill(self):
 
 
 root = Tk()
