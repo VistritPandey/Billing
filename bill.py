@@ -2,7 +2,7 @@ from Tkinter import *
 import math
 import os
 import random
-from Tkinter import messagebox
+import tkMessageBox
 
 # Prices
 tax = 0.18
@@ -377,6 +377,7 @@ class Bill_App:
         self.txtarea.insert(END, "\n Total Bill: \t\t\t\tRs. %s" %
                             (self.Total_Bill))
         self.txtarea.insert(END, "\n-------------------------------------")
+        self.save_bill()
 
     def welcome_bill(self):
         self.txtarea.delete('1.0', END)
@@ -389,6 +390,15 @@ class Bill_App:
         self.txtarea.insert(END, "\n-------------------------------------")
 
     def save_bill(self):
+        op = tkMessageBox.askyesno(
+            "Save Bill?", "Do you want to save the bill?")
+        if op > 0:
+            self.bill_data = self.txtarea.get('1.0', END)
+            f1 = open("bills/"+str(self.bill_no.get())+".txt", "w")
+            f1.write(self.bill_data)
+            f1.close()
+        else:
+            return
 
 
 root = Tk()
