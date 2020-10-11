@@ -254,7 +254,7 @@ class Bill_App:
 
         total_btn = Button(btn_f, command=self.total, text="Total", bg="cadetblue", fg="white", bd=2, pady=15, width=10, font="arial 15 bold").grid(
             row=0, column=0, padx=5, pady=5)
-        GBill_btn = Button(btn_f, text="Generate Bill", command=self.welcome_bill, bg="cadetblue", fg="white", bd=2, pady=15, width=10, font="arial 15 bold").grid(
+        GBill_btn = Button(btn_f, text="Generate Bill", command=self.bill_area, bg="cadetblue", fg="white", bd=2, pady=15, width=10, font="arial 15 bold").grid(
             row=0, column=1, padx=5, pady=5)
         clear_btn = Button(btn_f, text="Clear", bg="cadetblue", fg="white", bd=2, pady=15, width=10, font="arial 15 bold").grid(
             row=0, column=2, padx=5, pady=5)
@@ -296,13 +296,73 @@ class Bill_App:
         self.r3_tax.set("Rs."+str(round((self.total_r3_price*tax), 2)))
 
     def bill_area(self):
-        pass
+        self.welcome_bill()
+        if self.x1.get() != 0:
+            self.txtarea.insert(END, "\n X1\t\t%s\t\t%s" %
+                                (self.x1.get(), (self.x1.get()*x1_price)))
+        if self.x2.get() != 0:
+            self.txtarea.insert(END, "\n X2\t\t%s\t\t%s" %
+                                (self.x2.get(), (self.x2.get()*x2_price)))
+        if self.x3.get() != 0:
+            self.txtarea.insert(END, "\n X3\t\t%s\t\t%s" %
+                                (self.x3.get(), (self.x3.get()*x3_price)))
+        if self.x4.get() != 0:
+            self.txtarea.insert(END, "\n X4\t\t%s\t\t%s" %
+                                (self.x4.get(), (self.x4.get()*x4_price)))
+        if self.x5.get() != 0:
+            self.txtarea.insert(END, "\n X5\t\t%s\t\t%s" %
+                                (self.x5.get(), (self.x5.get()*x5_price)))
+        if self.x6.get() != 0:
+            self.txtarea.insert(END, "\n X6\t\t%s\t\t%s" %
+                                (self.x6.get(), (self.x6.get()*x6_price)))
+
+        if self.y1.get() != 0:
+            self.txtarea.insert(END, "\n Y1\t\t%s\t\t%s" %
+                                (self.y1.get(), (self.y1.get()*y1_price)))
+        if self.y2.get() != 0:
+            self.txtarea.insert(END, "\n Y2\t\t%s\t\t%s" %
+                                (self.y2.get(), (self.y2.get()*y2_price)))
+        if self.y3.get() != 0:
+            self.txtarea.insert(END, "\n Y3\t\t%s\t\t%s" %
+                                (self.y3.get(), (self.y3.get()*y3_price)))
+        if self.y4.get() != 0:
+            self.txtarea.insert(END, "\n Y4\t\t%s\t\t%s" %
+                                (self.y4.get(), (self.y4.get()*y4_price)))
+        if self.y5.get() != 0:
+            self.txtarea.insert(END, "\n Y5\t\t%s\t\t%s" %
+                                (self.y5.get(), (self.y5.get()*y5_price)))
+        if self.y6.get() != 0:
+            self.txtarea.insert(END, "\n Y6\t\t%s\t\t%s" %
+                                (self.y6.get(), (self.y6.get()*y6_price)))
+
+        if self.z1.get() != 0:
+            self.txtarea.insert(END, "\n Z1\t\t%s\t\t%s" %
+                                (self.z1.get(), (self.z1.get()*z1_price)))
+        if self.z2.get() != 0:
+            self.txtarea.insert(END, "\n Z2\t\t%s\t\t%s" %
+                                (self.z2.get(), (self.z2.get()*z2_price)))
+        if self.z3.get() != 0:
+            self.txtarea.insert(END, "\n Z3\t\t%s\t\t%s" %
+                                (self.z3.get(), (self.z3.get()*z3_price)))
+        if self.z4.get() != 0:
+            self.txtarea.insert(END, "\n Z4\t\t%s\t\t%s" %
+                                (self.z4.get(), (self.z4.get()*z4_price)))
+        if self.z5.get() != 0:
+            self.txtarea.insert(END, "\n Z5\t\t%s\t\t%s" %
+                                (self.z5.get(), (self.z5.get()*z5_price)))
+        if self.z6.get() != 0:
+            self.txtarea.insert(END, "\n Z6\t\t%s\t\t%s" %
+                                (self.z6.get(), (self.z6.get()*z6_price)))
 
     def welcome_bill(self):
-        self.txtarea.insert(END, "\tWelcome COMPANY NAME")
-        self.txtarea.insert(END, "\nBill no. :      " + self.bill_no.get())
-        self.txtarea.insert(END, "\nCustomer name : " + self.c_name.get())
-        self.txtarea.insert(END, "\nPhone number :  "+self.c_phon.get())
+        self.txtarea.delete('1.0', END)
+        self.txtarea.insert(END, "\tWelcome COMPANY NAME\n")
+        self.txtarea.insert(END, "\n Bill no. :      " + self.bill_no.get())
+        self.txtarea.insert(END, "\n Customer name : " + self.c_name.get())
+        self.txtarea.insert(END, "\n Phone number :  "+self.c_phon.get())
+        self.txtarea.insert(END, "\n-------------------------------------")
+        self.txtarea.insert(END, "\n Products\t\tQTY\t\tPrice")
+        self.txtarea.insert(END, "\n-------------------------------------")
 
 
 root = Tk()
