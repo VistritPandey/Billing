@@ -1,5 +1,27 @@
 from Tkinter import *
 
+# Prices
+x1_price = 10
+x2_price = 10
+x3_price = 10
+x4_price = 10
+x5_price = 10
+x6_price = 10
+
+y1_price = 10
+y2_price = 10
+y3_price = 10
+y4_price = 10
+y5_price = 10
+y6_price = 10
+
+z1_price = 10
+z2_price = 10
+z3_price = 10
+z4_price = 10
+z5_price = 10
+z6_price = 10
+
 
 class Bill_App:
     def __init__(self, root):
@@ -225,7 +247,7 @@ class Bill_App:
         btn_f = Frame(F6, bd=7, relief=GROOVE)
         btn_f.place(x=750, width=580, height=150)
 
-        total_btn = Button(btn_f, text="Total", bg="cadetblue", fg="white", bd=2, pady=15, width=10, font="arial 15 bold").grid(
+        total_btn = Button(btn_f, command=self.total, text="Total", bg="cadetblue", fg="white", bd=2, pady=15, width=10, font="arial 15 bold").grid(
             row=0, column=0, padx=5, pady=5)
         GBill_btn = Button(btn_f, text="Generate Bill", bg="cadetblue", fg="white", bd=2, pady=15, width=10, font="arial 15 bold").grid(
             row=0, column=1, padx=5, pady=5)
@@ -233,6 +255,37 @@ class Bill_App:
             row=0, column=2, padx=5, pady=5)
         exit_btn = Button(btn_f, text="Exit", bg="cadetblue", fg="white", bd=2, pady=15, width=10, font="arial 15 bold").grid(
             row=0, column=3, padx=5, pady=5)
+
+    def total(self):
+        self.total_r1_price = float(
+            (self.x1.get()*x1_price) +
+            (self.x2.get()*x2_price) +
+            (self.x3.get()*x3_price) +
+            (self.x4.get()*x4_price) +
+            (self.x5.get()*x5_price) +
+            (self.x6.get()*x6_price)
+        )
+        self.r1_total.set(str(self.total_r1_price))
+
+        self.total_r2_price = float(
+            (self.y1.get()*y1_price) +
+            (self.y2.get()*y2_price) +
+            (self.y3.get()*y3_price) +
+            (self.y4.get()*y4_price) +
+            (self.y5.get()*y5_price) +
+            (self.y6.get()*y6_price)
+        )
+        self.r2_total.set(str(self.total_r2_price))
+
+        self.total_r3_price = float(
+            (self.z1.get()*z1_price) +
+            (self.z2.get()*z2_price) +
+            (self.z3.get()*z3_price) +
+            (self.z4.get()*z4_price) +
+            (self.z5.get()*z5_price) +
+            (self.z6.get()*z6_price)
+        )
+        self.r3_total.set(str(self.total_r3_price))
 
 
 root = Tk()
