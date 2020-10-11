@@ -43,6 +43,7 @@ class Bill_App:
         self.c_name = StringVar()
         self.c_phon = StringVar()
         self.bill_no = StringVar()
+        self.search_bill = StringVar()
 
         # Customer Detail
         F = LabelFrame(self.root, text="Customer Details", font=(
@@ -51,17 +52,17 @@ class Bill_App:
 
         cname_lbl = Label(F, text="Customer Name", bg=bg_color, fg="white", font=(
             "times new roman", 15, "bold")).grid(row=0, column=0, padx=20, pady=5)
-        cname_txt = Entry(F, width=15, font="arial 15", bd=7, relief=SUNKEN).grid(
+        cname_txt = Entry(F, width=15, textvariable=self.c_name, font="arial 15", bd=7, relief=SUNKEN).grid(
             row=0, column=1, pady=5, padx=10)
 
         cphn_lbl = Label(F, text="Phone Number", bg=bg_color, fg="white", font=(
             "times new roman", 15, "bold")).grid(row=0, column=2, padx=20, pady=5)
-        cphn_txt = Entry(F, width=15, font="arial 15", bd=7, relief=SUNKEN).grid(
+        cphn_txt = Entry(F, width=15, textvariable=self.c_phon, font="arial 15", bd=7, relief=SUNKEN).grid(
             row=0, column=3, pady=5, padx=10)
 
         c_bill_lbl = Label(F, text="Bill Number", bg=bg_color, fg="white", font=(
             "times new roman", 15, "bold")).grid(row=0, column=4, padx=20, pady=5)
-        c_bill_txt = Entry(F, width=15, font="arial 15", bd=7, relief=SUNKEN).grid(
+        c_bill_txt = Entry(F, width=15, textvariable=self.search_bill, font="arial 15", bd=7, relief=SUNKEN).grid(
             row=0, column=5, pady=5, padx=10)
 
         bill_btn = Button(F, text="Search", width=10, bd=7,
@@ -74,32 +75,32 @@ class Bill_App:
 
         x1_lbl = Label(F2, text="X1", font=("times new roman", 16, "bold"), bg=bg_color,
                        fg="lightgreen").grid(row=0, column=0, padx=10, pady=10, sticky="w")
-        x1_txt = Entry(F2, width=10, font=("times new roman", 16, "bold"),
+        x1_txt = Entry(F2, width=10, textvariable=self.x1, font=("times new roman", 16, "bold"),
                        bd=5, relief=SUNKEN).grid(row=0, column=1, padx=10, pady=10)
 
         x2_lbl = Label(F2, text="X2", font=("times new roman", 16, "bold"), bg=bg_color,
                        fg="lightgreen").grid(row=1, column=0, padx=10, pady=10, sticky="w")
-        x2_txt = Entry(F2, width=10, font=("times new roman", 16, "bold"),
+        x2_txt = Entry(F2, width=10, textvariable=self.x2, font=("times new roman", 16, "bold"),
                        bd=5, relief=SUNKEN).grid(row=1, column=1, padx=10, pady=10)
 
         x3_lbl = Label(F2, text="X3", font=("times new roman", 16, "bold"), bg=bg_color,
                        fg="lightgreen").grid(row=2, column=0, padx=10, pady=10, sticky="w")
-        x3_txt = Entry(F2, width=10, font=("times new roman", 16, "bold"),
+        x3_txt = Entry(F2, width=10, textvariable=self.x3, font=("times new roman", 16, "bold"),
                        bd=5, relief=SUNKEN).grid(row=2, column=1, padx=10, pady=10)
 
         x4_lbl = Label(F2, text="X4", font=("times new roman", 16, "bold"), bg=bg_color,
                        fg="lightgreen").grid(row=3, column=0, padx=10, pady=10, sticky="w")
-        x4_txt = Entry(F2, width=10, font=("times new roman", 16, "bold"),
+        x4_txt = Entry(F2, width=10, textvariable=self.x4, font=("times new roman", 16, "bold"),
                        bd=5, relief=SUNKEN).grid(row=3, column=1, padx=10, pady=10)
 
         x5_lbl = Label(F2, text="X5", font=("times new roman", 16, "bold"), bg=bg_color,
                        fg="lightgreen").grid(row=4, column=0, padx=10, pady=10, sticky="w")
-        x5_txt = Entry(F2, width=10, font=("times new roman", 16, "bold"),
+        x5_txt = Entry(F2, width=10, textvariable=self.x5, font=("times new roman", 16, "bold"),
                        bd=5, relief=SUNKEN).grid(row=4, column=1, padx=10, pady=10)
 
         x6_lbl = Label(F2, text="X6", font=("times new roman", 16, "bold"), bg=bg_color,
                        fg="lightgreen").grid(row=5, column=0, padx=10, pady=10, sticky="w")
-        x6_txt = Entry(F2, width=10, font=("times new roman", 16, "bold"),
+        x6_txt = Entry(F2, width=10, textvariable=self.x6, font=("times new roman", 16, "bold"),
                        bd=5, relief=SUNKEN).grid(row=5, column=1, padx=10, pady=10)
 
         # Frame2
@@ -109,32 +110,32 @@ class Bill_App:
 
         y1_lbl = Label(F3, text="Y1", font=("times new roman", 16, "bold"), bg=bg_color,
                        fg="lightgreen").grid(row=0, column=0, padx=10, pady=10, sticky="w")
-        y1_txt = Entry(F3, width=10, font=("times new roman", 16, "bold"),
+        y1_txt = Entry(F3, width=10, textvariable=self.y1, font=("times new roman", 16, "bold"),
                        bd=5, relief=SUNKEN).grid(row=0, column=1, padx=10, pady=10)
 
         y2_lbl = Label(F3, text="Y2", font=("times new roman", 16, "bold"), bg=bg_color,
                        fg="lightgreen").grid(row=1, column=0, padx=10, pady=10, sticky="w")
-        y2_txt = Entry(F3, width=10, font=("times new roman", 16, "bold"),
+        y2_txt = Entry(F3, width=10, textvariable=self.y2, font=("times new roman", 16, "bold"),
                        bd=5, relief=SUNKEN).grid(row=1, column=1, padx=10, pady=10)
 
         y3_lbl = Label(F3, text="Y3", font=("times new roman", 16, "bold"), bg=bg_color,
                        fg="lightgreen").grid(row=2, column=0, padx=10, pady=10, sticky="w")
-        y3_txt = Entry(F3, width=10, font=("times new roman", 16, "bold"),
+        y3_txt = Entry(F3, width=10, textvariable=self.y3, font=("times new roman", 16, "bold"),
                        bd=5, relief=SUNKEN).grid(row=2, column=1, padx=10, pady=10)
 
         y4_lbl = Label(F3, text="Y4", font=("times new roman", 16, "bold"), bg=bg_color,
                        fg="lightgreen").grid(row=3, column=0, padx=10, pady=10, sticky="w")
-        y4_txt = Entry(F3, width=10, font=("times new roman", 16, "bold"),
+        y4_txt = Entry(F3, width=10, textvariable=self.y4, font=("times new roman", 16, "bold"),
                        bd=5, relief=SUNKEN).grid(row=3, column=1, padx=10, pady=10)
 
         y5_lbl = Label(F3, text="Y5", font=("times new roman", 16, "bold"), bg=bg_color,
                        fg="lightgreen").grid(row=4, column=0, padx=10, pady=10, sticky="w")
-        y5_txt = Entry(F3, width=10, font=("times new roman", 16, "bold"),
+        y5_txt = Entry(F3, width=10, textvariable=self.y5, font=("times new roman", 16, "bold"),
                        bd=5, relief=SUNKEN).grid(row=4, column=1, padx=10, pady=10)
 
         y6_lbl = Label(F3, text="Y6", font=("times new roman", 16, "bold"), bg=bg_color,
                        fg="lightgreen").grid(row=5, column=0, padx=10, pady=10, sticky="w")
-        y6_txt = Entry(F3, width=10, font=("times new roman", 16, "bold"),
+        y6_txt = Entry(F3, width=10, textvariable=self.y6, font=("times new roman", 16, "bold"),
                        bd=5, relief=SUNKEN).grid(row=5, column=1, padx=10, pady=10)
 
         # Frame3
@@ -144,32 +145,32 @@ class Bill_App:
 
         z1_lbl = Label(F4, text="Z1", font=("times new roman", 16, "bold"), bg=bg_color,
                        fg="lightgreen").grid(row=0, column=0, padx=10, pady=10, sticky="w")
-        z1_txt = Entry(F4, width=10, font=("times new roman", 16, "bold"),
+        z1_txt = Entry(F4, width=10, textvariable=self.z1, font=("times new roman", 16, "bold"),
                        bd=5, relief=SUNKEN).grid(row=0, column=1, padx=10, pady=10)
 
         z2_lbl = Label(F4, text="Z2", font=("times new roman", 16, "bold"), bg=bg_color,
                        fg="lightgreen").grid(row=1, column=0, padx=10, pady=10, sticky="w")
-        z2_txt = Entry(F4, width=10, font=("times new roman", 16, "bold"),
+        z2_txt = Entry(F4, width=10, textvariable=self.z2, font=("times new roman", 16, "bold"),
                        bd=5, relief=SUNKEN).grid(row=1, column=1, padx=10, pady=10)
 
         z3_lbl = Label(F4, text="Z3", font=("times new roman", 16, "bold"), bg=bg_color,
                        fg="lightgreen").grid(row=2, column=0, padx=10, pady=10, sticky="w")
-        z3_txt = Entry(F4, width=10, font=("times new roman", 16, "bold"),
+        z3_txt = Entry(F4, width=10, textvariable=self.z3, font=("times new roman", 16, "bold"),
                        bd=5, relief=SUNKEN).grid(row=2, column=1, padx=10, pady=10)
 
         z4_lbl = Label(F4, text="Z4", font=("times new roman", 16, "bold"), bg=bg_color,
                        fg="lightgreen").grid(row=3, column=0, padx=10, pady=10, sticky="w")
-        z4_txt = Entry(F4, width=10, font=("times new roman", 16, "bold"),
+        z4_txt = Entry(F4, width=10, textvariable=self.z4, font=("times new roman", 16, "bold"),
                        bd=5, relief=SUNKEN).grid(row=3, column=1, padx=10, pady=10)
 
         z5_lbl = Label(F4, text="Z5", font=("times new roman", 16, "bold"), bg=bg_color,
                        fg="lightgreen").grid(row=4, column=0, padx=10, pady=10, sticky="w")
-        z5_txt = Entry(F4, width=10, font=("times new roman", 16, "bold"),
+        z5_txt = Entry(F4, width=10, textvariable=self.z5, font=("times new roman", 16, "bold"),
                        bd=5, relief=SUNKEN).grid(row=4, column=1, padx=10, pady=10)
 
         z6_lbl = Label(F4, text="Z6", font=("times new roman", 16, "bold"), bg=bg_color,
                        fg="lightgreen").grid(row=5, column=0, padx=10, pady=10, sticky="w")
-        z6_txt = Entry(F4, width=10, font=("times new roman", 16, "bold"),
+        z6_txt = Entry(F4, width=10, textvariable=self.z6, font=("times new roman", 16, "bold"),
                        bd=5, relief=SUNKEN).grid(row=5, column=1, padx=10, pady=10)
 
         # Frame 4
@@ -191,32 +192,32 @@ class Bill_App:
         F6.place(x=0, y=560, relwidth=1, height=140)
         m1_lbl = Label(F6, text="Total R1 price", bg=bg_color, fg="white", font=("times new roman", 14, "bold")).grid(
             row=0, column=0, padx=20, pady=1, sticky="w")
-        m1_txt = Entry(F6, width=18, font="arial 10 bold", bd=7,
+        m1_txt = Entry(F6, width=18, textvariable=self.r1_total, font="arial 10 bold", bd=7,
                        relief=SUNKEN).grid(row=0, column=1, padx=10, pady=1)
 
         m2_lbl = Label(F6, text="Total R2 price", bg=bg_color, fg="white", font=("times new roman", 14, "bold")).grid(
             row=1, column=0, padx=20, pady=1, sticky="w")
-        m2_txt = Entry(F6, width=18, font="arial 10 bold", bd=7,
+        m2_txt = Entry(F6, width=18, textvariable=self.r2_total, font="arial 10 bold", bd=7,
                        relief=SUNKEN).grid(row=1, column=1, padx=10, pady=1)
 
         m3_lbl = Label(F6, text="Total R3 price", bg=bg_color, fg="white", font=("times new roman", 14, "bold")).grid(
             row=2, column=0, padx=20, pady=1, sticky="w")
-        m3_txt = Entry(F6, width=18, font="arial 10 bold", bd=7,
+        m3_txt = Entry(F6, width=18, textvariable=self.r3_total, font="arial 10 bold", bd=7,
                        relief=SUNKEN).grid(row=2, column=1, padx=10, pady=1)
 
         c1_lbl = Label(F6, text="R1 Tax", bg=bg_color, fg="white", font=("times new roman", 14, "bold")).grid(
             row=0, column=2, padx=20, pady=1, sticky="w")
-        c1_txt = Entry(F6, width=18, font="arial 10 bold", bd=7,
+        c1_txt = Entry(F6, width=18, textvariable=self.r1_tax, font="arial 10 bold", bd=7,
                        relief=SUNKEN).grid(row=0, column=3, padx=10, pady=1)
 
         c2_lbl = Label(F6, text="R2 Tax", bg=bg_color, fg="white", font=("times new roman", 14, "bold")).grid(
             row=1, column=2, padx=20, pady=1, sticky="w")
-        c2_txt = Entry(F6, width=18, font="arial 10 bold", bd=7,
+        c2_txt = Entry(F6, width=18, textvariable=self.r2_tax, font="arial 10 bold", bd=7,
                        relief=SUNKEN).grid(row=1, column=3, padx=10, pady=1)
 
         c3_lbl = Label(F6, text="R3 Tax", bg=bg_color, fg="white", font=("times new roman", 14, "bold")).grid(
             row=2, column=2, padx=20, pady=1, sticky="w")
-        c3_txt = Entry(F6, width=18, font="arial 10 bold", bd=7,
+        c3_txt = Entry(F6, width=18, textvariable=self.r3_tax, font="arial 10 bold", bd=7,
                        relief=SUNKEN).grid(row=2, column=3, padx=10, pady=1)
 
         # Button F
