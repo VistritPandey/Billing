@@ -7,7 +7,7 @@ class Bill_App:
         self.root.geometry("1350x700+0+0")
         self.root.title("Billing Software")
         bg_color = "#074463"
-        title = Label(self.root, text="Jaysurya Billing", bd=12, relief=GROOVE,
+        title = Label(self.root, text="Billing Software", bd=12, relief=GROOVE,
                       bg=bg_color, fg="white", font=("times new roman", 30, "bold"), pady=2).pack(fill=X)
         # Customer Detail
         F = LabelFrame(self.root, text="Customer Details", font=(
@@ -33,7 +33,7 @@ class Bill_App:
                           font="arial 12 bold").grid(row=0, column=6, pady=10, padx=10)
 
         # Frame1
-        F2 = LabelFrame(self.root, bd=10, text="R1", font=(
+        F2 = LabelFrame(self.root, bd=10, relief=GROOVE, text="R1", font=(
             "times new roman", 15, "bold"), fg="gold", bg=bg_color)
         F2.place(x=5, y=180, width=325, height=380)
 
@@ -68,7 +68,7 @@ class Bill_App:
                        bd=5, relief=SUNKEN).grid(row=5, column=1, padx=10, pady=10)
 
         # Frame2
-        F3 = LabelFrame(self.root, bd=10, text="R2", font=(
+        F3 = LabelFrame(self.root, bd=10, relief=GROOVE, text="R2", font=(
             "times new roman", 15, "bold"), fg="gold", bg=bg_color)
         F3.place(x=340, y=180, width=325, height=380)
 
@@ -103,7 +103,7 @@ class Bill_App:
                        bd=5, relief=SUNKEN).grid(row=5, column=1, padx=10, pady=10)
 
         # Frame3
-        F4 = LabelFrame(self.root, bd=10, text="R1", font=(
+        F4 = LabelFrame(self.root, bd=10, relief=GROOVE, text="R3", font=(
             "times new roman", 15, "bold"), fg="gold", bg=bg_color)
         F4.place(x=670, y=180, width=325, height=380)
 
@@ -136,6 +136,24 @@ class Bill_App:
                        fg="lightgreen").grid(row=5, column=0, padx=10, pady=10, sticky="w")
         z6_txt = Entry(F4, width=10, font=("times new roman", 16, "bold"),
                        bd=5, relief=SUNKEN).grid(row=5, column=1, padx=10, pady=10)
+
+        # Frame 4
+
+        F5 = Frame(self.root, bd=10, relief=GROOVE)
+        F5.place(x=1010, y=180, width=340, height=380)
+        bill_title = Label(
+            F5, text="Bill Area", font="arial 15 bold", bd=7, relief=GROOVE).pack(fill=X)
+        scrol_y = Scrollbar(F5, orient=VERTICAL)
+        self.txtarea = Text(F5, yscrollcommand=scrol_y.set)
+        scrol_y.pack(side=RIGHT, fill=Y)
+        scrol_y.config(command=self.txtarea.yview)
+        self.txtarea.pack(fill=BOTH, expand=1)
+
+        # Button Frame
+
+        F6 = LabelFrame(self.root, bd=10, relief=GROOVE, text="Bill Menu", font=(
+            "times new roman", 15, "bold"), fg="gold", bg=bg_color)
+        F6.place(x=0, y=560, relwidth=1, height=140)
 
 
 root = Tk()
